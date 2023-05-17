@@ -12,11 +12,7 @@ aggiungere un metodo che stampi la stringa con tutte le info del dispositivo (ol
 
 class Computer
 {
-
-
-
-
-    function __construct(protected String $brand, protected String $model, protected String $monitor, protected String $keyboard, protected String $RAM, protected String $memory, protected String $CPU)
+    function __construct(protected String $brand, protected String $model, protected String $monitor, protected String $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath)
     {
         $this->brand = $brand;
         $this->model = $model;
@@ -25,14 +21,16 @@ class Computer
         $this->RAM = $RAM;
         $this->memory = $memory;
         $this->CPU = $CPU;
+        $this->imagePath = $imagePath;
     }
 }
 
 
 class Desktop extends Computer
 {
-    function __construct(protected String $motherboard, protected String $graphicsCard, protected String $powerSupply)
+    function __construct(protected String $brand, protected String $model, protected String $monitor, protected String $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath, protected String $motherboard, protected String $graphicsCard, protected String $powerSupply)
     {
+        parent::__construct($brand, $model, $monitor, $keyboard, $RAM, $memory, $CPU, $imagePath);
         $this->motherboard = $motherboard;
         $this->graphicsCard = $graphicsCard;
         $this->powerSupply = $powerSupply;
@@ -41,8 +39,9 @@ class Desktop extends Computer
 
 class Personal extends Computer
 {
-    function __construct(protected String $battery, protected $touchpad, protected $laptopChassis,)
+    function __construct(protected String $brand, protected String $model, protected String $monitor, protected String $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath, protected String $battery, protected $touchpad, protected $laptopChassis,)
     {
+        parent::__construct($brand, $model, $monitor, $keyboard, $RAM, $memory, $CPU, $imagePath);
         $this->battery = $battery;
         $this->touchpad = $touchpad;
         $this->laptopChassis = $laptopChassis;
@@ -50,6 +49,12 @@ class Personal extends Computer
 }
 
 
-$computers = []
+$computers = [
+
+    $XPSTower = new Desktop("Dell", "XPS Tower", "UltraSharp U2720Q", "KB216 Wired Keyboard", "16GB", "1TB", "Intel Core i7", "https://picsum.photos/200/300", "ASUS Prime Z590-A", "NVIDIA GeForce RTX 3080", "850w Power Supply")
+
+];
+
+var_dump($computers[0])
 
 ?>
