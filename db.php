@@ -2,7 +2,7 @@
 
 $computers = [
 
-    $XPSTower = new Desktop(
+    new Desktop(
         "Dell",
         "XPS Tower",
         new Monitor("UltraSharp U2720Q", 24),
@@ -16,7 +16,7 @@ $computers = [
         "850w Power Supply"
     ),
 
-    $ThinkPadX1Carbon = new Personal(
+    new Personal(
         "Lenovo",
         "ThinkPad X1 Carbon",
         new Monitor("FHD IPS Display", 14),
