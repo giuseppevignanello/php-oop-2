@@ -19,7 +19,6 @@ include __DIR__ . "/db.php";
 
 
 
-var_dump($computers)
 
 ?>
 
@@ -93,35 +92,41 @@ var_dump($computers)
         </div>
     </div>
     <main>
-        <div class="card">
+        <div class="cards d-flex">
+
             <?php foreach ($computers as $computer) {
             ?>
-            <img src="<?= $computer->imagePathERROREVOLONTARIO ?>" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"><?= $computer->brand ?> <?= $computer->model ?> </h5>
-                <h6 class="card-subtitle mb-2 text-muted "><?= $computer->getType() ?> </h6>
-                <ul class="list-group">
-                    <li class="list-group-item">Monitor <?= $computer->monitor->name ?> <?= $computer->monitor->inch ?>
-                    </li>
-                    <li class="list-group-item">Keyboard
-                        <?= $computer->keyboard->name ?><?= $computer->keyboard->language ?>
-                    </li>
-                    <li class="list-group-item">RAM <?= $computer->RAM ?></li>
-                    <li class="list-group-item">Memory <?= $computer->memory ?></li>
-                    <li class="list-group-item">CPU <?= $computer->CPU ?></li>
-                    <li class="list-group-item">
-                        <?= $computer->getType() === "Desktop" ? "MotherBoard " : "Battery " ?><?= $computer->getType() === "Desktop" ? $computer->motherboard : $computer->battery ?>
-                    </li>
-                    <li class="list-group-item">
-                        <?= $computer->getType() === "Desktop" ? "Graphics Card" : "TouchPad " ?><?= $computer->getType() === "Desktop" ? $computer->graphicsCard : $computer->touchpad ?>
-                    </li>
-                    <li class="list-group-item">
-                        <?= $computer->getType() === "Desktop" ? "Power Supply" : "Laptop Chassis " ?><?= $computer->getType() === "Desktop" ? $computer->powerSupply : $computer->laptopChassis ?>
-                    </li>
+            <div class="card">
 
-                </ul>
+                <img src="<?= $computer->imagePathERROREVOLONTARIO ?>" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $computer->brand ?> <?= $computer->model ?> </h5>
+                    <h6 class="card-subtitle mb-2 text-muted "><?= $computer->getType() ?> </h6>
+                    <ul class="list-group">
+                        <li class="list-group-item">Monitor <?= $computer->monitor->name ?>
+                            <?= $computer->monitor->inch ?>
+                        </li>
+                        <li class="list-group-item">Keyboard
+                            <?= $computer->keyboard->name ?><?= $computer->keyboard->language ?>
+                        </li>
+                        <li class="list-group-item">RAM <?= $computer->RAM ?></li>
+                        <li class="list-group-item">Memory <?= $computer->memory ?></li>
+                        <li class="list-group-item">CPU <?= $computer->CPU ?></li>
+                        <li class="list-group-item">
+                            <?= $computer->getType() === "Desktop" ? "MotherBoard " : "Battery " ?><?= $computer->getType() === "Desktop" ? $computer->motherboard : $computer->battery ?>
+                        </li>
+                        <li class="list-group-item">
+                            <?= $computer->getType() === "Desktop" ? "Graphics Card" : "TouchPad " ?><?= $computer->getType() === "Desktop" ? $computer->graphicsCard : $computer->touchpad ?>
+                        </li>
+                        <li class="list-group-item">
+                            <?= $computer->getType() === "Desktop" ? "Power Supply" : "Laptop Chassis " ?><?= $computer->getType() === "Desktop" ? $computer->powerSupply : $computer->laptopChassis ?>
+                        </li>
+
+                    </ul>
+                </div>
+
+
             </div>
-
             <?php } ?>
         </div>
     </main>
