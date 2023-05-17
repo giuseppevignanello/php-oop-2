@@ -10,7 +10,7 @@ $computers = [
         "16GB",
         "1TB",
         "Intel Core i7",
-        "https://picsum.photos/200/300",
+        "https://picsum.photos/50/300",
         "ASUS Prime Z590-A",
         "NVIDIA GeForce RTX 3080",
         "850w Power Supply"
@@ -24,7 +24,7 @@ $computers = [
         "16GB DDR4",
         "512GB NVMe SSD",
         "Intel Core i7-1165G7",
-        "https://picsum.photos/200/300",
+        "https://picsum.photos/50/75",
         "4-cell Li-Polymer",
         "TrackPoint and multi-touch touchpad",
         "Carbon Fiber Chassis"
@@ -37,7 +37,7 @@ $computers = [
         "8GB DDR4",
         "512GB SSD",
         "AMD Ryzen 5 3600",
-        "https://picsum.photos/200/300",
+        "https://picsum.photos/50/75",
         "ASUS Prime B450M-A",
         "NVIDIA GeForce GTX 1660 Ti",
         "500W Power Supply"
@@ -50,7 +50,7 @@ $computers = [
         "16GB DDR4",
         "1TB SSD",
         "Intel Core i7",
-        "https://picsum.photos/200/300",
+        "https://picsum.photos/50/75",
         "Li-Poly",
         "Force Touch trackpad",
         "Aluminum Chassis"

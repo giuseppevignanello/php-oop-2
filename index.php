@@ -18,6 +18,7 @@ include_once __DIR__ . "/Models/Keyboard.php";
 include __DIR__ . "/db.php";
 
 
+
 var_dump($computers)
 
 ?>
@@ -95,13 +96,30 @@ var_dump($computers)
         <div class="card">
             <?php foreach ($computers as $computer) {
             ?>
-            <img src="<?php $computer->imagePath ?>" class=" card-img-top" alt="...">
+            <img src="<?= $computer->imagePathERROREVOLONTARIO ?>" alt="...">
             <div class="card-body">
-                <h5 class="card-title"><?php $computer->brand ?></h5>
-                <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                b5
+                <h5 class="card-title"><?= $computer->brand ?> <?= $computer->model ?> </h5>
+                <h6 class="card-subtitle mb-2 text-muted "><?= $computer->getType() ?> </h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Monitor <?= $computer->monitor->name ?> <?= $computer->monitor->inch ?>
+                    </li>
+                    <li class="list-group-item">Keyboard
+                        <?= $computer->keyboard->name ?><?= $computer->keyboard->language ?>
+                    </li>
+                    <li class="list-group-item">RAM <?= $computer->RAM ?></li>
+                    <li class="list-group-item">Memory <?= $computer->memory ?></li>
+                    <li class="list-group-item">CPU <?= $computer->CPU ?></li>
+                    <li class="list-group-item">
+                        <?= $computer->getType() === "Desktop" ? "MotherBoard " : "Battery " ?><?= $computer->getType() === "Desktop" ? $computer->motherboard : $computer->battery ?>
+                    </li>
+                    <li class="list-group-item">
+                        <?= $computer->getType() === "Desktop" ? "Graphics Card" : "TouchPad " ?><?= $computer->getType() === "Desktop" ? $computer->graphicsCard : $computer->touchpad ?>
+                    </li>
+                    <li class="list-group-item">
+                        <?= $computer->getType() === "Desktop" ? "Power Supply" : "Laptop Chassis " ?><?= $computer->getType() === "Desktop" ? $computer->powerSupply : $computer->laptopChassis ?>
+                    </li>
+
+                </ul>
             </div>
 
             <?php } ?>

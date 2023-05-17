@@ -14,4 +14,9 @@ class Desktop extends Computer
         $this->graphicsCard = $graphicsCard;
         $this->powerSupply = $powerSupply;
     }
+
+    public function getType()
+    {
+        return "Desktop";
+    }
 }

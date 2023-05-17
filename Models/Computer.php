@@ -17,4 +17,8 @@ class Computer
         $this->CPU = $CPU;
         $this->imagePath = $imagePath;
     }
+
+    public function getType(){
+        return "Computer";
+    }
 }

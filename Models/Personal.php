@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 
-include_once __DIR__."/Computer.php"; 
-include_once __DIR__."/Monitor.php"; 
-include_once __DIR__."/Keyboard.php"; 
+include_once __DIR__ . "/Computer.php";
+include_once __DIR__ . "/Monitor.php";
+include_once __DIR__ . "/Keyboard.php";
 
 
 class Personal extends Computer
@@ -14,5 +14,10 @@ class Personal extends Computer
         $this->battery = $battery;
         $this->touchpad = $touchpad;
         $this->laptopChassis = $laptopChassis;
+    }
+
+    public function getType()
+    {
+        return "Personal";
     }
 }
