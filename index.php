@@ -30,7 +30,8 @@ var_dump($computers)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Computers</title>
 </head>
 
@@ -40,7 +41,9 @@ var_dump($computers)
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -52,7 +55,8 @@ var_dump($computers)
                             <a class="nav-link" href="#">Link</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu">
@@ -91,14 +95,14 @@ var_dump($computers)
         <div class="card">
             <?php foreach ($computers as $computer) {
             ?>
-                <img src="<?php $computer->imagePath ?>" class=" card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><?php $computer->brand ?></h5>
-                    <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    b5
-                </div>
+            <img src="<?php $computer->imagePath ?>" class=" card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><?php $computer->brand ?></h5>
+                <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                b5
+            </div>
 
             <?php } ?>
         </div>
