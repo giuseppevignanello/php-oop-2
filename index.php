@@ -18,7 +18,7 @@ include_once __DIR__ . "/Models/Keyboard.php";
 include __DIR__ . "/db.php";
 
 
-// var_dump($computers)
+var_dump($computers)
 
 ?>
 
@@ -78,6 +78,7 @@ include __DIR__ . "/db.php";
 
     </header>
     <div id="jumbotron" class="p-5 mb-4 bg-light rounded-3">
+
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Need new computer?</h1>
             <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in
@@ -86,6 +87,22 @@ include __DIR__ . "/db.php";
             <button class="btn btn-primary btn-lg" type="button">Example button</button>
         </div>
     </div>
+    <main>
+        <div class="card">
+            <?php foreach ($computers as $computer) {
+            ?>
+                <img src="<?php $computer->imagePath ?>" class=" card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><?php $computer->brand ?></h5>
+                    <h6 class="card-subtitle mb-2 text-muted ">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    b5
+                </div>
+
+            <?php } ?>
+        </div>
+    </main>
 </body>
 
 </html>

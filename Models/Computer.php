@@ -1,12 +1,12 @@
-<?php 
-include_once __DIR__."/Monitor.php"; 
-include_once __DIR__."/Keyboard.php"; 
+<?php
+include_once __DIR__ . "/Monitor.php";
+include_once __DIR__ . "/Keyboard.php";
 
 class Computer
 {
-    protected $monitor;
-    protected $keyboard;
-    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath)
+    public $monitor;
+    public $keyboard;
+    function __construct(public String $brand, public String $model, Monitor $monitor, Keyboard $keyboard, public String $RAM, public String $memory, public String $CPU, public String $imagePath)
     {
         $this->brand = $brand;
         $this->model = $model;
