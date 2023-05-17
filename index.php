@@ -21,4 +21,19 @@ class Computer
     protected $CPU;
 }
 
+
+class Desktop extends Computer
+{
+    protected $motherboard;
+    protected $graphicsCard;
+    protected $powerSupply;
+}
+
+class Personal extends Computer
+{
+    protected $battery;
+    protected $touchpad;
+    protected $laptopChassis;
+}
+
 ?>
