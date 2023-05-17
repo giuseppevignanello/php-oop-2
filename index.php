@@ -9,10 +9,15 @@ pensate a cosa compone un pc: 'ha un' monitor? 'ha una' mbo? 'ha una' keyboard? 
 aggiungere un metodo che stampi la stringa con tutte le info del dispositivo (oltre ai getter/setters necessari). -->
 
 <?php
+include_once __DIR__ . "/Models/Monitor.php";
+include_once __DIR__ . "/Models/Keyboard.php";
+include __DIR__ . "/db.php";
 
 class Computer
 {
-    function __construct(protected String $brand, protected String $model, protected String $monitor, protected String $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath)
+    protected $monitor;
+    protected $keyboard;
+    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath)
     {
         $this->brand = $brand;
         $this->model = $model;
@@ -28,7 +33,7 @@ class Computer
 
 class Desktop extends Computer
 {
-    function __construct(protected String $brand, protected String $model, protected String $monitor, protected String $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath, protected String $motherboard, protected String $graphicsCard, protected String $powerSupply)
+    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath, protected String $motherboard, protected String $graphicsCard, protected String $powerSupply)
     {
         parent::__construct($brand, $model, $monitor, $keyboard, $RAM, $memory, $CPU, $imagePath);
         $this->motherboard = $motherboard;
@@ -39,7 +44,7 @@ class Desktop extends Computer
 
 class Personal extends Computer
 {
-    function __construct(protected String $brand, protected String $model, protected String $monitor, protected String $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath, protected String $battery, protected $touchpad, protected $laptopChassis,)
+    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath, protected String $battery, protected $touchpad, protected $laptopChassis,)
     {
         parent::__construct($brand, $model, $monitor, $keyboard, $RAM, $memory, $CPU, $imagePath);
         $this->battery = $battery;
@@ -48,13 +53,6 @@ class Personal extends Computer
     }
 }
 
-
-$computers = [
-
-    $XPSTower = new Desktop("Dell", "XPS Tower", "UltraSharp U2720Q", "KB216 Wired Keyboard", "16GB", "1TB", "Intel Core i7", "https://picsum.photos/200/300", "ASUS Prime Z590-A", "NVIDIA GeForce RTX 3080", "850w Power Supply")
-
-];
-
-var_dump($computers[0])
+var_dump($computers)
 
 ?>
