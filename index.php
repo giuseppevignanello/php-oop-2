@@ -12,28 +12,44 @@ aggiungere un metodo che stampi la stringa con tutte le info del dispositivo (ol
 
 class Computer
 {
-    protected $brand;
-    protected $model;
-    protected $monitor;
-    protected $keyboard;
-    protected $RAM;
-    protected $memory;
-    protected $CPU;
+
+
+
+
+    function __construct(protected String $brand, protected String $model, protected String $monitor, protected String $keyboard, protected String $RAM, protected String $memory, protected String $CPU)
+    {
+        $this->brand = $brand;
+        $this->model = $model;
+        $this->monitor = $monitor;
+        $this->keyboard = $keyboard;
+        $this->RAM = $RAM;
+        $this->memory = $memory;
+        $this->CPU = $CPU;
+    }
 }
 
 
 class Desktop extends Computer
 {
-    protected $motherboard;
-    protected $graphicsCard;
-    protected $powerSupply;
+    function __construct(protected String $motherboard, protected String $graphicsCard, protected String $powerSupply)
+    {
+        $this->motherboard = $motherboard;
+        $this->graphicsCard = $graphicsCard;
+        $this->powerSupply = $powerSupply;
+    }
 }
 
 class Personal extends Computer
 {
-    protected $battery;
-    protected $touchpad;
-    protected $laptopChassis;
+    function __construct(protected String $battery, protected $touchpad, protected $laptopChassis,)
+    {
+        $this->battery = $battery;
+        $this->touchpad = $touchpad;
+        $this->laptopChassis = $laptopChassis;
+    }
 }
+
+
+$computers = []
 
 ?>
