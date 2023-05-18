@@ -1,6 +1,19 @@
 <?php
 
 $computers = [
+    new Personal(
+        "Lenovo",
+        "ThinkPad X1 Carbon",
+        new Monitor("FHD IPS Display", 14),
+        new Keyboard("Backlit Keyboard", "English"),
+        "16GB DDR4",
+        "512GB NVMe SSD",
+        "Intel Core i7-1165G7",
+        "https://picsum.photos/300/200",
+        "4-cell Li-Polymer",
+        "TrackPoint and multi-touch touchpad",
+        "Carbon Fiber Chassis"
+    ),
 
     new Desktop(
         "Dell",
@@ -10,38 +23,13 @@ $computers = [
         "16GB",
         "1TB",
         "Intel Core i7",
-        "https://picsum.photos/50/300",
+        "https://picsum.photos/300/200",
         "ASUS Prime Z590-A",
         "NVIDIA GeForce RTX 3080",
         "850w Power Supply"
     ),
 
-    new Personal(
-        "Lenovo",
-        "ThinkPad X1 Carbon",
-        new Monitor("FHD IPS Display", 14),
-        new Keyboard("Backlit Keyboard", "English"),
-        "16GB DDR4",
-        "512GB NVMe SSD",
-        "Intel Core i7-1165G7",
-        "https://picsum.photos/50/75",
-        "4-cell Li-Polymer",
-        "TrackPoint and multi-touch touchpad",
-        "Carbon Fiber Chassis"
-    ),
-    new Desktop(
-        "HP",
-        "Pavilion Gaming Desktop",
-        new Monitor("24\" Full HD Display", 24),
-        new Keyboard("HP Gaming Keyboard", "English"),
-        "8GB DDR4",
-        "512GB SSD",
-        "AMD Ryzen 5 3600",
-        "https://picsum.photos/50/75",
-        "ASUS Prime B450M-A",
-        "NVIDIA GeForce GTX 1660 Ti",
-        "500W Power Supply"
-    ),
+
     new Personal(
         "Apple",
         "MacBook Pro",
@@ -50,11 +38,25 @@ $computers = [
         "16GB DDR4",
         "1TB SSD",
         "Intel Core i7",
-        "https://picsum.photos/50/75",
+        "https://picsum.photos/300/200",
         "Li-Poly",
         "Force Touch trackpad",
         "Aluminum Chassis"
-    )
+    ),
+
+    new Desktop(
+        "HP",
+        "Pavilion Gaming Desktop",
+        new Monitor("24\" Full HD Display", 24),
+        new Keyboard("HP Gaming Keyboard", "English"),
+        "8GB DDR4",
+        "512GB SSD",
+        "AMD Ryzen 5 3600",
+        "https://picsum.photos/300/200",
+        "ASUS Prime B475M-A",
+        "NVIDIA GeForce GTX 1660 Ti",
+        "750W Power Supply"
+    ),
 
 
 
