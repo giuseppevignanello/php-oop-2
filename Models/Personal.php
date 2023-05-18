@@ -4,13 +4,15 @@
 include_once __DIR__ . "/Computer.php";
 include_once __DIR__ . "/Monitor.php";
 include_once __DIR__ . "/Keyboard.php";
+include_once __DIR__ . "/../Traits/Weighable.php";
 
 
 class Personal extends Computer
 {
-    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected Int $RAM, protected String $memory, protected String $CPU, protected String $imagePath, protected String $battery, protected $touchpad, protected $laptopChassis,)
+    use Weighable;
+    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected $RAM, protected String $memory, protected String $CPU, protected String $imagePath, protected float $weight, protected String $battery, protected $touchpad, protected $laptopChassis,)
     {
-        parent::__construct($brand, $model, $monitor, $keyboard, $RAM, $memory, $CPU, $imagePath);
+        parent::__construct($brand, $model, $monitor, $keyboard, $RAM, $memory, $CPU, $imagePath, $weight);
         $this->battery = $battery;
         $this->touchpad = $touchpad;
         $this->laptopChassis = $laptopChassis;

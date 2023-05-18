@@ -1,12 +1,14 @@
 <?php
 include_once __DIR__ . "/Monitor.php";
 include_once __DIR__ . "/Keyboard.php";
+include_once __DIR__ . "/../Traits/Weighable.php";
 
 class Computer
 {
+    use Weighable;
     public $monitor;
     public $keyboard;
-    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected Int $RAM, protected String $memory, protected String $CPU, protected String $imagePath)
+    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected $RAM, protected String $memory, protected String $CPU, protected String $imagePath, protected float $weight)
     {
         $this->brand = $brand;
         $this->model = $model;
@@ -16,6 +18,7 @@ class Computer
         $this->memory = $memory;
         $this->CPU = $CPU;
         $this->imagePath = $imagePath;
+        $this->setWeight($weight);
     }
 
     public function getBrand()
@@ -28,6 +31,9 @@ class Computer
     }
     public function getRAM()
     {
+        if (!is_int($this->RAM)) {
+            throw new Exception('Is not a number');
+        }
         return $this->RAM;
     }
     public function getCPU()
@@ -41,6 +47,11 @@ class Computer
     public function getImagePath()
     {
         return $this->imagePath;
+    }
+
+    public function getWeight()
+    {
+        return $this->weight;
     }
 
     public function getType()

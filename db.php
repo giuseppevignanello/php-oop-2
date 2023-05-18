@@ -1,5 +1,4 @@
 <?php
-
 $computers = [
     new Personal(
         "Lenovo",
@@ -10,9 +9,12 @@ $computers = [
         "512GB NVMe SSD",
         "Intel Core i7-1165G7",
         "https://picsum.photos/300/200",
+        1.5,
         "4-cell Li-Polymer",
         "TrackPoint and multi-touch touchpad",
         "Carbon Fiber Chassis"
+
+
     ),
 
     new Desktop(
@@ -24,9 +26,11 @@ $computers = [
         "1TB",
         "Intel Core i7",
         "https://picsum.photos/300/200",
+        5,
         "ASUS Prime Z590-A",
         "NVIDIA GeForce RTX 3080",
-        "850w Power Supply"
+        "850w Power Supply",
+
     ),
 
 
@@ -39,9 +43,11 @@ $computers = [
         "1TB SSD",
         "Intel Core i7",
         "https://picsum.photos/300/200",
+        1.3,
         "Li-Poly",
         "Force Touch trackpad",
-        "Aluminum Chassis"
+        "Aluminum Chassis",
+
     ),
 
     new Desktop(
@@ -53,12 +59,10 @@ $computers = [
         "512GB SSD",
         "AMD Ryzen 5 3600",
         "https://picsum.photos/300/200",
+        6,
         "ASUS Prime B475M-A",
         "NVIDIA GeForce GTX 1660 Ti",
-        "750W Power Supply"
+        "750W Power Supply",
+
     ),
-
-
-
-
 ];
