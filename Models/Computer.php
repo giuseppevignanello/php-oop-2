@@ -6,7 +6,7 @@ class Computer
 {
     public $monitor;
     public $keyboard;
-    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath)
+    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected Int $RAM, protected String $memory, protected String $CPU, protected String $imagePath)
     {
         $this->brand = $brand;
         $this->model = $model;
