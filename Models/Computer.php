@@ -6,7 +6,7 @@ class Computer
 {
     public $monitor;
     public $keyboard;
-    function __construct(public String $brand, public String $model, Monitor $monitor, Keyboard $keyboard, public String $RAM, public String $memory, public String $CPU, public String $imagePath)
+    function __construct(protected String $brand, protected String $model, Monitor $monitor, Keyboard $keyboard, protected String $RAM, protected String $memory, protected String $CPU, protected String $imagePath)
     {
         $this->brand = $brand;
         $this->model = $model;
@@ -18,7 +18,33 @@ class Computer
         $this->imagePath = $imagePath;
     }
 
-    public function getType(){
+    public function getBrand()
+    {
+        return $this->brand;
+    }
+    public function getModel()
+    {
+        return $this->model;
+    }
+    public function getRAM()
+    {
+        return $this->RAM;
+    }
+    public function getCPU()
+    {
+        return $this->CPU;
+    }
+    public function getMemory()
+    {
+        return $this->memory;
+    }
+    public function getImagePath()
+    {
+        return $this->imagePath;
+    }
+
+    public function getType()
+    {
         return "Computer";
     }
 }

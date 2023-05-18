@@ -35,7 +35,7 @@ include __DIR__ . "/db.php";
     <title>Computers</title>
 </head>
 
-<body>
+<body class="bg-dark">
 
     <header>
         <nav class="navbar navbar-expand-lg bg-light">
@@ -98,9 +98,9 @@ include __DIR__ . "/db.php";
                 <?php foreach ($computers as $computer) {
                 ?>
                 <div class="card m-3 p-2" style="width: 18rem;">
-                    <img class="card-img-top img-fluid" src="<?= $computer->imagePath ?>" alt="...">
+                    <img class="card-img-top img-fluid" src="<?= $computer->getImagePath() ?>" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title"><?= $computer->brand ?> <?= $computer->model ?> </h5>
+                        <h5 class="card-title"><?= $computer->getBrand() ?> <?= $computer->getBrand() ?> </h5>
                         <h6 class="card-subtitle mb-2 text-muted "><?= $computer->getType() ?> </h6>
 
                         <ul class="list-group">
@@ -110,17 +110,20 @@ include __DIR__ . "/db.php";
                             <li class="list-group-item"> <strong> Keyboard </strong>
                                 <?= $computer->keyboard->name ?><?= $computer->keyboard->language ?>
                             </li>
-                            <li class="list-group-item"><strong> RAM </strong><?= $computer->RAM ?></li>
-                            <li class="list-group-item"><strong> Memory </strong><?= $computer->memory ?></li>
-                            <li class="list-group-item"><strong> CPU </strong><?= $computer->CPU ?></li>
+                            <li class="list-group-item"><strong> RAM </strong><?= $computer->getRAM() ?></li>
+                            <li class="list-group-item"><strong> Memory </strong><?= $computer->getMemory() ?></li>
+                            <li class="list-group-item"><strong> CPU </strong><?= $computer->getCPU() ?></li>
                             <li class="list-group-item">
-                                <?= $computer->getType() === "Desktop" ? "MotherBoard " : "Battery " ?><?= $computer->getType() === "Desktop" ? $computer->motherboard : $computer->battery ?>
+                                <strong>
+                                    <?= $computer->getType() === "Desktop" ? "MotherBoard " : "Battery " ?></strong><?= $computer->getType() === "Desktop" ? $computer->getMotherboard() : $computer->getBattery() ?>
                             </li>
                             <li class="list-group-item">
-                                <?= $computer->getType() === "Desktop" ? "Graphics Card" : "TouchPad " ?><?= $computer->getType() === "Desktop" ? $computer->graphicsCard : $computer->touchpad ?>
+                                <strong>
+                                    <?= $computer->getType() === "Desktop" ? "Graphics Card" : "TouchPad " ?></strong><?= $computer->getType() === "Desktop" ? $computer->getGraphicCard() : $computer->getTouchpad() ?>
                             </li>
                             <li class="list-group-item">
-                                <?= $computer->getType() === "Desktop" ? "Power Supply" : "Laptop Chassis " ?><?= $computer->getType() === "Desktop" ? $computer->powerSupply : $computer->laptopChassis ?>
+                                <strong>
+                                    <?= $computer->getType() === "Desktop" ? "Power Supply" : "Laptop Chassis " ?></strong><?= $computer->getType() === "Desktop" ? $computer->getPowerSupply() : $computer->getLaptopChassis() ?>
                             </li>
 
                         </ul>
